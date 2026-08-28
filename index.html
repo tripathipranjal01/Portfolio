@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pranjal Tripathi — Data Analyst / Analytics Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<style>
+  :root{
+    --paper:#F1EFE8;
+    --card:#FFFFFF;
+    --ink:#1B1A17;
+    --sub:#6B6558;
+    --line:#D8D3C4;
+    --red:#D6402B;
+    --navy:#26344A;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif; line-height:1.6;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 28px;}
+
+  nav{position:sticky; top:0; z-index:60; background:var(--paper); border-bottom:2px solid var(--ink);}
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:58px; gap:12px;}
+  .case-id{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.06em; color:var(--sub); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .tabs{display:flex; flex-shrink:0;}
+  .tabs a{font-family:'JetBrains Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; padding:10px 16px; border-left:1px solid var(--line); color:var(--sub);}
+  .tabs a:hover{color:var(--red);}
+  @media(max-width:680px){.tabs{display:none;}}
+
+  header.hero{padding:70px 0 0; position:relative; border-bottom:2px solid var(--ink);}
+  .stamp{position:absolute; top:64px; right:28px; transform:rotate(8deg); border:3px solid var(--red); color:var(--red); font-family:'JetBrains Mono',monospace; font-weight:700; font-size:12px; letter-spacing:0.1em; padding:8px 14px; border-radius:6px; text-transform:uppercase;}
+  @media(max-width:680px){.stamp{display:none;}}
+  .file-label{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--red); letter-spacing:0.08em; margin-bottom:10px; text-transform:uppercase;}
+  h1.name{font-family:'Archivo Black',sans-serif; text-transform:uppercase; font-size:clamp(42px,8vw,86px); line-height:0.92; letter-spacing:-0.01em; margin-bottom:22px;}
+  .role-line{font-size:17px; color:var(--sub); max-width:600px; margin-bottom:30px;}
+  .role-line b{color:var(--ink);}
+  .hero-links{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:40px;}
+  .btn{font-family:'JetBrains Mono',monospace; font-size:12.5px; padding:11px 18px; border:1.5px solid var(--ink); display:inline-flex; align-items:center; gap:8px; text-transform:uppercase; letter-spacing:0.03em; transition:all .15s ease;}
+  .btn.primary{background:var(--ink); color:var(--paper);}
+  .btn.primary:hover{background:var(--red); border-color:var(--red);}
+  .btn:not(.primary):hover{border-color:var(--red); color:var(--red);}
+
+  .index-strip{display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); padding-left:0; padding-right:0;}
+  .stack-strip{
+    display:flex; flex-wrap:wrap; gap:22px; align-items:center;
+    padding:20px 0 26px; border-top:1px solid var(--line);
+  }
+  .stack-item{display:flex; align-items:center; gap:8px; font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--sub);}
+  .stack-item i{font-size:20px; color:var(--navy);}
+  .stack-item:hover i{color:var(--red);}
+  .stack-label{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--red); text-transform:uppercase; letter-spacing:0.08em; width:100%; margin-bottom:2px;}
+  .index-strip div{padding:18px 22px; border-right:1px solid var(--line);}
+  .index-strip div:last-child{border-right:none;}
+  .index-strip .num{font-family:'Archivo Black',sans-serif; font-size:26px; color:var(--red); line-height:1;}
+  .index-strip .lbl{font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--sub); text-transform:uppercase; letter-spacing:0.05em; margin-top:6px;}
+  @media(max-width:680px){.index-strip{grid-template-columns:1fr 1fr;}}
+
+  section{padding:56px 0; border-bottom:1px solid var(--line);}
+  .sec-head{display:flex; align-items:baseline; gap:16px; margin-bottom:32px;}
+  .sec-tab{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--paper); background:var(--ink); padding:4px 10px; letter-spacing:0.06em;}
+  .sec-title{font-family:'Bebas Neue',sans-serif; font-size:34px; letter-spacing:0.02em;}
+
+  .entry{background:var(--card); border:1px solid var(--line); padding:26px 28px; margin-bottom:16px; position:relative;}
+  .entry::before{content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--navy);}
+  .entry-head{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:8px; margin-bottom:4px;}
+  .entry-title{font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:0.01em;}
+  .entry-date{font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--sub); text-transform:uppercase;}
+  .entry-org{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--red); margin-bottom:16px;}
+  .entry ul{list-style:none; display:flex; flex-direction:column; gap:9px;}
+  .entry li{padding-left:20px; position:relative; font-size:14.5px; color:#3B382F;}
+  .entry li::before{content:"•"; position:absolute; left:0; color:var(--red); font-weight:700;}
+
+  .proj-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media(max-width:720px){.proj-grid{grid-template-columns:1fr;}}
+  .proj{background:var(--card); border:1px solid var(--line); padding:22px; display:flex; flex-direction:column; gap:10px;}
+  .proj-title{font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:0.01em;}
+  .proj p{font-size:13.5px; color:var(--sub);}
+  .tag-row{display:flex; flex-wrap:wrap; gap:6px; margin-top:auto; padding-top:6px;}
+  .tag{font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--navy); border:1px solid var(--navy); padding:3px 8px; text-transform:uppercase;}
+
+  .skills-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 48px;}
+  @media(max-width:720px){.skills-grid{grid-template-columns:1fr;}}
+  .skill-cat{margin-bottom:30px; break-inside:avoid;}
+  .skill-cat h4{
+    font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--paper); background:var(--navy);
+    text-transform:uppercase; letter-spacing:0.05em; padding:5px 10px; display:inline-block; margin-bottom:14px;
+  }
+  .tag-flow{font-size:14.5px; line-height:2.1;}
+  .tag-flow span{color:#3B382F;}
+  .tag-flow .sep{color:var(--red); font-weight:700; margin:0 9px; font-family:'JetBrains Mono',monospace;}
+
+  .edu{background:var(--card); border:1px solid var(--line); padding:24px 28px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center; border-left:4px solid var(--red);}
+  .edu-school{font-family:'Bebas Neue',sans-serif; font-size:22px;}
+  .edu-deg{color:var(--sub); font-size:14px; margin-top:4px;}
+  .edu-year{font-family:'JetBrains Mono',monospace; color:var(--red); font-size:13px;}
+
+  footer{padding:64px 0 46px; text-align:center; border-bottom:none;}
+  footer h2{font-family:'Bebas Neue',sans-serif; font-size:40px; margin-bottom:14px; letter-spacing:0.01em;}
+  footer p{color:var(--sub); max-width:460px; margin:0 auto 30px; font-size:14.5px;}
+  .contact-row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap;}
+  .foot-note{margin-top:50px; font-family:'JetBrains Mono',monospace; font-size:11px; color:#948C78;}
+
+  /* ============ TABLET ============ */
+  @media(max-width:820px){
+    .wrap{padding:0 22px;}
+    header.hero{padding:52px 0 0;}
+    .role-line{font-size:15.5px;}
+    .hero-links{gap:10px;}
+    .btn{font-size:11.5px; padding:10px 14px;}
+    section{padding:44px 0;}
+    .sec-title{font-size:30px;}
+    .entry{padding:22px 22px;}
+    .entry-title{font-size:20px;}
+  }
+
+  /* ============ MOBILE ============ */
+  @media(max-width:560px){
+    body{line-height:1.55;}
+    .wrap{padding:0 16px;}
+
+    /* nav */
+    nav .wrap{height:50px;}
+    .case-id{font-size:10px; letter-spacing:0.04em; line-height:1.3;}
+
+    /* hero */
+    header.hero{padding:38px 0 0;}
+    .file-label{font-size:10.5px; margin-bottom:8px;}
+    h1.name{font-size:clamp(40px,15vw,58px); margin-bottom:16px;}
+    .role-line{font-size:14.5px; margin-bottom:22px;}
+    .hero-links{flex-direction:column; gap:8px; margin-bottom:28px;}
+    .hero-links .btn{width:100%; justify-content:center; padding:13px 16px; font-size:12px;}
+
+    /* stack strip -> horizontal scroll instead of wrap-pile */
+    .stack-strip{
+      gap:16px; padding:16px 0 20px;
+      overflow-x:auto; flex-wrap:nowrap;
+      -webkit-overflow-scrolling:touch;
+      scrollbar-width:none;
+    }
+    .stack-strip::-webkit-scrollbar{display:none;}
+    .stack-item{flex:0 0 auto; font-size:11.5px;}
+    .stack-item i{font-size:18px;}
+    .stack-label{margin-bottom:0;}
+
+    /* index strip: single column, left-aligned rows */
+    .index-strip{grid-template-columns:1fr;}
+    .index-strip div{
+      padding:14px 16px; border-right:none; border-bottom:1px solid var(--line);
+      display:flex; align-items:baseline; gap:12px;
+    }
+    .index-strip div:last-child{border-bottom:none;}
+    .index-strip .num{font-size:22px;}
+    .index-strip .lbl{margin-top:0;}
+
+    /* sections */
+    section{padding:36px 0;}
+    .sec-head{flex-direction:column; align-items:flex-start; gap:8px; margin-bottom:22px;}
+    .sec-tab{font-size:10px;}
+    .sec-title{font-size:27px;}
+
+    /* experience entries */
+    .entry{padding:18px 16px 18px 20px; margin-bottom:12px;}
+    .entry::before{width:3px;}
+    .entry-head{gap:2px; margin-bottom:2px;}
+    .entry-title{font-size:18px; line-height:1.15;}
+    .entry-date{font-size:10.5px;}
+    .entry-org{font-size:11.5px; margin-bottom:12px;}
+    .entry li{font-size:13.5px; padding-left:16px;}
+    .entry ul{gap:8px;}
+
+    /* projects */
+    .proj{padding:18px 16px;}
+    .proj-title{font-size:18px;}
+    .proj p{font-size:13px;}
+    .tag{font-size:10px; padding:3px 7px;}
+
+    /* skills */
+    .skills-grid{gap:0;}
+    .skill-cat{margin-bottom:24px;}
+    .skill-cat h4{font-size:10.5px;}
+    .tag-flow{font-size:13.5px; line-height:1.95;}
+    .tag-flow .sep{margin:0 6px;}
+
+    /* education */
+    .edu{padding:18px 16px 18px 20px; flex-direction:column; align-items:flex-start; gap:6px; border-left-width:3px;}
+    .edu-school{font-size:18px; line-height:1.2;}
+    .edu-deg{font-size:12.5px;}
+    .edu-year{font-size:11.5px;}
+
+    /* footer */
+    footer{padding:48px 0 40px;}
+    footer h2{font-size:30px;}
+    footer p{font-size:13.5px; margin-bottom:24px;}
+    .contact-row{flex-direction:column; gap:8px;}
+    .contact-row .btn{width:100%; justify-content:center; padding:13px 16px;}
+    .foot-note{margin-top:36px; font-size:10px; line-height:1.5;}
+  }
+
+  /* very small phones */
+  @media(max-width:360px){
+    h1.name{font-size:38px;}
+    .sec-title{font-size:24px;}
+    .entry-title{font-size:16.5px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="case-id">FILE NO. 2026-PT / DATA ANALYST</div>
+    <div class="tabs">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="stamp">Open ✕ Remote</div>
+    <div class="file-label">Subject Profile</div>
+    <h1 class="name">Pranjal<br>Tripathi</h1>
+    <p class="role-line">Data Analyst & Analytics Engineer — <b>ETL pipelines</b>, <b>KPI dashboards</b>, and <b>AI-powered automation</b> that turn raw business data into decisions across product, marketing, and operations.</p>
+    <div class="hero-links">
+      <a class="btn primary" href="mailto:tripathipranjal01@gmail.com">Email me</a>
+      <a class="btn" href="tel:+918208606292">+91 82086 06292</a>
+      <a class="btn" href="#" id="linkedin-link">LinkedIn ↗</a>
+      <a class="btn" href="#" id="resume-link">Download résumé ↓</a>
+    </div>
+
+    <div class="stack-strip">
+      <span class="stack-label">Core Stack</span>
+      <span class="stack-item"><i class="devicon-python-plain colored"></i>Python</span>
+      <span class="stack-item"><i class="devicon-mysql-plain colored"></i>SQL</span>
+      <span class="stack-item"><i class="devicon-apachespark-plain colored"></i>PySpark</span>
+      <span class="stack-item"><i class="devicon-amazonwebservices-plain-wordmark colored"></i>AWS</span>
+      <span class="stack-item"><i class="devicon-googlecloud-plain colored"></i>GCP</span>
+      <span class="stack-item"><i class="devicon-apachekafka-original colored"></i>Kafka</span>
+      <span class="stack-item"><i class="devicon-mongodb-plain colored"></i>MongoDB</span>
+      <span class="stack-item"><i class="devicon-nodejs-plain colored"></i>Node.js</span>
+      <span class="stack-item"><i class="devicon-fastapi-plain colored"></i>FastAPI</span>
+      <span class="stack-item"><i class="devicon-react-original colored"></i>React</span>
+      <span class="stack-item"><i class="devicon-tailwindcss-plain colored"></i>Tailwind</span>
+      <span class="stack-item"><i class="devicon-git-plain colored"></i>Git</span>
+    </div>
+  </div>
+  <div class="index-strip wrap">
+    <div><div class="num">2+</div><div class="lbl">Years Experience</div></div>
+    <div><div class="num">30%</div><div class="lbl">Manual Reporting Cut</div></div>
+    <div><div class="num">50K+</div><div class="lbl">Records Analyzed</div></div>
+    <div><div class="num">09</div><div class="lbl">Roles Held</div></div>
+  </div>
+</header>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-tab">01 / LOG</span><h2 class="sec-title">Work Experience</h2></div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Technical Lead — Founder</span>
+        <span class="entry-date">May 2024 — Present</span>
+      </div>
+      <div class="entry-org">Flashfire · United States (Remote)</div>
+      <ul>
+        <li>Started Flashfire from zero — an engine that now files 1,200+ verified job applications a month per user and gets people to interviews 85% faster than applying by hand</li>
+        <li>Own the whole stack: backend APIs, an OpenAI-driven resume writer that adapts in real time, and scrapers that keep the job pool fresh</li>
+        <li>Piped data through Kafka into GCP (Pub/Sub → BigQuery → DBT) so product, resume, and system-health metrics all land in one place</li>
+        <li>Paired GPT with embedding search to build a resume rewriter that consistently clears ATS filters, spitting out final PDFs straight from LaTeX</li>
+        <li>Set up PostHog to see where users drop off, and n8n bots that ping Discord/email the moment a job pipeline breaks</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Data Analyst — Analytics Engineering & Business Analytics</span>
+        <span class="entry-date">Nov 2025 — Present</span>
+      </div>
+      <div class="entry-org">Frido · Pune, Maharashtra</div>
+      <ul>
+        <li>Spend most days in the data figuring out what's really driving revenue — which campaigns pull their weight, where customers drop off, what makes them come back</li>
+        <li>Threw out the old manual reporting process and rebuilt it in SQL — the team gets 30%+ of that time back every week now</li>
+        <li>Put together Tableau dashboards leadership actually opens, pulling five different data sources into one KPI view</li>
+        <li>Set up DBT and Snowflake with validation checks baked in, so nobody has to eyeball a report before trusting the numbers</li>
+        <li>Handle the quick-commerce data at scale through PySpark — orders, customers, marketing — so reports don't lag behind the business</li>
+        <li>Started automating the boring stuff with OpenAI and n8n, plus a few FastAPI services, to keep manual ops work off the team's plate</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Associate Engineer — Analytics</span>
+        <span class="entry-date">Jan 2025 — Dec 2025</span>
+      </div>
+      <div class="entry-org">BT Group · Gurugram, Haryana</div>
+      <ul>
+        <li>Built out dashboards across three telecom verticals so leadership could actually see network health, downtime, and churn instead of guessing</li>
+        <li>Automated a chunk of the team's reporting in Python and SQL, freeing up 40% of the time that used to go into pulling numbers by hand</li>
+        <li>Found and fixed a slow point in the backend query logic — reports run twice as fast now, saving the team 10+ hours a week combined</li>
+        <li>Sat with network ops and product regularly to turn their business questions into metrics that actually answered them</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Gen AI Intern</span>
+        <span class="entry-date">Jan 2025 — Feb 2025</span>
+      </div>
+      <div class="entry-org">AudioPod AI · Bengaluru, Karnataka</div>
+      <ul>
+        <li>Prototyped a podcast summarizer stitching together Whisper transcription and GPT to turn hour-long episodes into a quick read</li>
+        <li>Wrapped it in a simple Streamlit app so anyone could drop in audio and get clean, skimmable bullets back</li>
+        <li>Played with chaining prompts to filter noise from transcripts and auto-tag topics by theme</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">AI Intern</span>
+        <span class="entry-date">Jun 2024 — Aug 2024</span>
+      </div>
+      <div class="entry-org">IBM · Remote</div>
+      <ul>
+        <li>Built a tool that pulls key terms out of internal documents to make them findable through search, using NLP under the hood</li>
+        <li>Trained and shipped the model behind a Flask API — testing showed it got semantic matches right over 90% of the time</li>
+        <li>Worked closely with the NLP team to keep tightening how keywords mapped to what people actually meant</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Software Developer Intern</span>
+        <span class="entry-date">Jun 2024 — Aug 2024</span>
+      </div>
+      <div class="entry-org">Cognecto · Remote</div>
+      <ul>
+        <li>Wrote the backend APIs behind a fleet-management dashboard, pulling in equipment status and location data</li>
+        <li>Built out the Streamlit views showing fuel burn, idle time, and early warnings for maintenance issues</li>
+        <li>Hooked up MongoDB and REST endpoints so the dashboard could reflect what was happening on the ground, live</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">SDE Intern</span>
+        <span class="entry-date">Jan 2024 — Apr 2024</span>
+      </div>
+      <div class="entry-org">Salesine · Remote</div>
+      <ul>
+        <li>Shipped frontend pieces of a client portal in React and Tailwind, from scratch to production</li>
+        <li>Helped build out the order-management and lead-tracking APIs on the backend with Node.js and Express</li>
+        <li>Wired MongoDB into the flow for live user data, and cleaned up components enough to cut duplicate code by a quarter</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Frontend Development Intern</span>
+        <span class="entry-date">May 2023 — Jul 2023</span>
+      </div>
+      <div class="entry-org">Oasis Infobyte · Remote</div>
+      <ul>
+        <li>Turned Figma mockups into working pages — portfolios, landing pages, forms — pixel by pixel in HTML and CSS</li>
+        <li>Added the small interactions that make a site feel real: modals, dropdowns, inline form validation, all in plain JavaScript</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">IT Intern</span>
+        <span class="entry-date">Jun 2022 — Aug 2022</span>
+      </div>
+      <div class="entry-org">Dehradun Smart City Limited · Dehradun, Uttarakhand</div>
+      <ul>
+        <li>Got a first-hand look at the city's traffic monitoring setup — how ECB, PIS, and CCTV feeds tie together under DICCC</li>
+        <li>Saw how a single dashboard pulls together every smart-city system the city runs into one operational view</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-tab">02 / BUILDS</span><h2 class="sec-title">Projects</h2></div>
+    <div class="proj-grid">
+      <div class="proj">
+        <div class="proj-title">Flashfire — AI Job Application Engine</div>
+        <p>My own venture — software that applies to jobs for you, at a scale no human could match. It's filed over 1,200 verified applications a month per user and gotten people to interviews 85% faster. Under the hood: Kafka feeding a GCP data stack, and a resume writer that pairs GPT with embedding search to consistently beat ATS filters.</p>
+        <div class="tag-row"><span class="tag">OpenAI</span><span class="tag">Kafka</span><span class="tag">GCP / BigQuery</span><span class="tag">FastAPI</span></div>
+      </div>
+      <div class="proj">
+        <div class="proj-title">AskAI — Market & Business Insights Assistant</div>
+        <p>Wanted to let people ask business questions in plain English and get real answers back — so I built a RAG assistant that retrieves from structured data before generating a response, keeping it grounded instead of guessing.</p>
+        <div class="tag-row"><span class="tag">RAG</span><span class="tag">LLM</span><span class="tag">Python</span></div>
+      </div>
+      <div class="proj">
+        <div class="proj-title">Fleet Intelligence Dashboard</div>
+        <p>A live view into a vehicle fleet — where things are, how much fuel they're burning, when something's about to need maintenance. Streamlit up front, MongoDB and REST APIs doing the heavy lifting behind it.</p>
+        <div class="tag-row"><span class="tag">MongoDB</span><span class="tag">Streamlit</span><span class="tag">REST APIs</span></div>
+      </div>
+      <div class="proj">
+        <div class="proj-title">Podcast & Long-Form Audio Summarizer</div>
+        <p>Nobody has time for hour-long episodes, so this takes the audio, transcribes it with Whisper, and has GPT boil it down to what actually matters — with some prompt-chaining tricks to keep the summaries clean.</p>
+        <div class="tag-row"><span class="tag">Whisper</span><span class="tag">GPT</span><span class="tag">Streamlit</span></div>
+      </div>
+      <div class="proj">
+        <div class="proj-title">Demand Forecasting & Predictive Analytics</div>
+        <p>Built out a set of forecasting models — ARIMA, SARIMA, LSTM — that account for seasonality and outside factors, aimed at helping teams plan inventory instead of reacting to it.</p>
+        <div class="tag-row"><span class="tag">ARIMA</span><span class="tag">LSTM</span><span class="tag">Forecasting</span></div>
+      </div>
+      <div class="proj">
+        <div class="proj-title">Enterprise ETL & Governance Layer</div>
+        <p>The unglamorous but critical layer underneath good dashboards — DBT and Snowflake pipelines with validation checks built in, so the Tableau and Power BI reports sitting on top can actually be trusted.</p>
+        <div class="tag-row"><span class="tag">DBT</span><span class="tag">Snowflake</span><span class="tag">PySpark</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-tab">03 / TOOLKIT</span><h2 class="sec-title">Skills</h2></div>
+
+    <div class="skills-grid">
+      <div class="skill-cat">
+        <h4>Programming & Data Analysis</h4>
+        <div class="tag-flow">
+          <span>Python — Pandas, NumPy</span><span class="sep">·</span><span>SQL — CTEs, Window Fns, Joins</span><span class="sep">·</span><span>PySpark</span><span class="sep">·</span><span>Advanced Excel</span><span class="sep">·</span><span>Statistical Analysis</span><span class="sep">·</span><span>Hypothesis Testing</span><span class="sep">·</span><span>A/B Testing</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <h4>Data Modeling & Warehousing</h4>
+        <div class="tag-flow">
+          <span>DBT — Modular Modeling & Testing</span><span class="sep">·</span><span>Snowflake</span><span class="sep">·</span><span>BigQuery</span><span class="sep">·</span><span>Dimensional Modeling</span><span class="sep">·</span><span>Fact-Dimension Design</span><span class="sep">·</span><span>Query Optimization</span><span class="sep">·</span><span>Data Validation & QA</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <h4>ETL / ELT & Pipelines</h4>
+        <div class="tag-flow">
+          <span>ETL Pipeline Development</span><span class="sep">·</span><span>Pipeline Monitoring</span><span class="sep">·</span><span>Kafka</span><span class="sep">·</span><span>Pub/Sub</span><span class="sep">·</span><span>Data Transformation Workflows</span><span class="sep">·</span><span>JSON / CSV / Parquet</span><span class="sep">·</span><span>Batch & Streaming Ingestion</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <h4>BI & Reporting</h4>
+        <div class="tag-flow">
+          <span>Power BI — DAX, Data Modeling</span><span class="sep">·</span><span>Tableau</span><span class="sep">·</span><span>Looker Studio</span><span class="sep">·</span><span>PostHog</span><span class="sep">·</span><span>KPI Design</span><span class="sep">·</span><span>Dashboard Development</span><span class="sep">·</span><span>Executive Reporting</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <h4>ML & Forecasting</h4>
+        <div class="tag-flow">
+          <span>Random Forest</span><span class="sep">·</span><span>XGBoost</span><span class="sep">·</span><span>ARIMA / SARIMA</span><span class="sep">·</span><span>LSTM</span><span class="sep">·</span><span>Holt-Winters</span><span class="sep">·</span><span>Feature Engineering</span><span class="sep">·</span><span>Model Validation</span><span class="sep">·</span><span>NLP Pipelines</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <h4>APIs & Integrations</h4>
+        <div class="tag-flow">
+          <span>REST API Design & Integration</span><span class="sep">·</span><span>FastAPI</span><span class="sep">·</span><span>Flask</span><span class="sep">·</span><span>Node.js / Express.js</span><span class="sep">·</span><span>OpenAI API</span><span class="sep">·</span><span>Webhooks</span><span class="sep">·</span><span>Authentication & Rate Limiting</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <h4>AI & Automation</h4>
+        <div class="tag-flow">
+          <span>Prompt Engineering</span><span class="sep">·</span><span>RAG</span><span class="sep">·</span><span>Embeddings</span><span class="sep">·</span><span>Whisper</span><span class="sep">·</span><span>n8n Workflow Automation</span><span class="sep">·</span><span>LLM-Powered Applications</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <h4>Databases</h4>
+        <div class="tag-flow">
+          <span>SQL Server</span><span class="sep">·</span><span>MongoDB</span><span class="sep">·</span><span>Snowflake</span><span class="sep">·</span><span>BigQuery</span><span class="sep">·</span><span>Relational & NoSQL Design</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <h4>Cloud Platforms</h4>
+        <div class="tag-flow">
+          <span>AWS</span><span class="sep">·</span><span>Azure</span><span class="sep">·</span><span>GCP — BigQuery, Pub/Sub</span><span class="sep">·</span><span>Cloud Data Platform Integration</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <h4>Tools & Practices</h4>
+        <div class="tag-flow">
+          <span>Git / GitHub</span><span class="sep">·</span><span>CI/CD</span><span class="sep">·</span><span>Streamlit</span><span class="sep">·</span><span>React.js / Tailwind CSS</span><span class="sep">·</span><span>Documentation</span><span class="sep">·</span><span>Testing & Validation</span><span class="sep">·</span><span>Workflow Automation</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <h4>Business & Delivery</h4>
+        <div class="tag-flow">
+          <span>Stakeholder Communication</span><span class="sep">·</span><span>Requirement Gathering</span><span class="sep">·</span><span>Cross-Functional Collaboration</span><span class="sep">·</span><span>Data Storytelling</span><span class="sep">·</span><span>Decision Support</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-tab">04 / RECORD</span><h2 class="sec-title">Education</h2></div>
+    <div class="edu">
+      <div>
+        <div class="edu-school">University of Petroleum and Energy Studies, Dehradun</div>
+        <div class="edu-deg">B.Tech, Computer Science — Specialisation in Business Analytics & Optimization</div>
+      </div>
+      <div class="edu-year">2021 — 2025</div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's build something with data.</h2>
+    <p>Open to remote Data Analyst, Analytics Engineer, and BI roles. Reach out — happy to walk through any project on this page.</p>
+    <div class="contact-row">
+      <a class="btn primary" href="mailto:tripathipranjal01@gmail.com">tripathipranjal01@gmail.com</a>
+      <a class="btn" href="tel:+918208606292">+91 82086 06292</a>
+      <a class="btn" href="#" id="linkedin-link-2">LinkedIn ↗</a>
+    </div>
+    <div class="foot-note">Pune, Maharashtra · Case file compiled from verified work across Frido, BT Group, and IBM</div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('#linkedin-link, #linkedin-link-2').forEach(el=>{
+    el.href = "https://www.linkedin.com/in/pranjal-tripathi"; // TODO: replace with your real LinkedIn URL
+  });
+  document.getElementById('resume-link').href = "#"; // TODO: link this to a hosted PDF of your resume
+</script>
+
+</body>
+</html>
