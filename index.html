@@ -82,16 +82,20 @@
   .tag-row{display:flex; flex-wrap:wrap; gap:6px; margin-top:auto; padding-top:6px;}
   .tag{font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--navy); border:1px solid var(--navy); padding:3px 8px; text-transform:uppercase;}
 
-  .skills-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 48px;}
+  .skills-grid{display:grid; grid-template-columns:1fr 1fr; gap:28px 40px;}
   @media(max-width:720px){.skills-grid{grid-template-columns:1fr;}}
-  .skill-cat{margin-bottom:30px; break-inside:avoid;}
+  .skill-cat{break-inside:avoid;}
   .skill-cat h4{
     font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--paper); background:var(--navy);
     text-transform:uppercase; letter-spacing:0.05em; padding:5px 10px; display:inline-block; margin-bottom:14px;
   }
-  .tag-flow{font-size:14.5px; line-height:2.1;}
-  .tag-flow span{color:#3B382F;}
-  .tag-flow .sep{color:var(--red); font-weight:700; margin:0 9px; font-family:'JetBrains Mono',monospace;}
+  .tag-flow{display:flex; flex-wrap:wrap; gap:8px;}
+  .tag-flow span{
+    font-size:13px; color:#3B382F; background:var(--paper);
+    border:1px solid var(--line); padding:5px 11px; border-radius:2px;
+    line-height:1.4;
+  }
+  .tag-flow .sep{display:none;}
 
   .edu{background:var(--card); border:1px solid var(--line); padding:24px 28px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center; border-left:4px solid var(--red);}
   .edu-school{font-family:'Bebas Neue',sans-serif; font-size:22px;}
@@ -179,11 +183,10 @@
     .tag{font-size:10px; padding:3px 7px;}
 
     /* skills */
-    .skills-grid{gap:0;}
-    .skill-cat{margin-bottom:24px;}
+    .skills-grid{gap:22px;}
     .skill-cat h4{font-size:10.5px;}
-    .tag-flow{font-size:13.5px; line-height:1.95;}
-    .tag-flow .sep{margin:0 6px;}
+    .tag-flow{gap:7px;}
+    .tag-flow span{font-size:12px; padding:4px 9px;}
 
     /* education */
     .edu{padding:18px 16px 18px 20px; flex-direction:column; align-items:flex-start; gap:6px; border-left-width:3px;}
